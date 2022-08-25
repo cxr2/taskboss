@@ -92,7 +92,7 @@ function DisplayTasks() {
         taskItem.classList.remove("done");
       }
 
-      DisplayTodos();
+      DisplayTasks();
     });
   });
 }
