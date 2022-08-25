@@ -14,7 +14,7 @@
   --delete: #f69b9e;
   --business: #39bda8;
   --personal: #fc8c8c;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -24,6 +24,10 @@
 header {
   background-color: var(--purple);
   color: #ffffff;
+}
+
+input {
+  border: none;
 }
 
 h1 {
@@ -197,4 +201,9 @@ input:checked ~ .bubble::after {
 
 .task-item .actions .delete {
   background-color: var(--delete);
+}
+
+.task-item.done .task-content input {
+  text-decoration: line-through;
+  color: var(--gray);
 }
