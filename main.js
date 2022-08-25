@@ -1,11 +1,30 @@
-.form-check-input:checked {
-    background-color: red;
-    border-color: pink;
-}
+window.addEventListener("load", () => {
+  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  const nameInput = document.querySelector("#name");
+  const newTaskForm = document.querySelector("#new-task-form");
 
-.form-switch .form-check-input {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='red'/%3e%3c/svg%3e");
-}
-.form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='pink'/%3e%3c/svg%3e");
-}
+  const username = localStorage.getItem("username") || "";
+
+  nameInput.value = username;
+
+  nameInput.addEventListener("change", (e) => {
+    localStorage.setItem("username", e.target.value);
+  });
+
+  newTaskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const task = {
+      content: e.target.elements.content.value,
+      category: e.target.elements.category.value,
+      done: false,
+      createdAt: new Date().getTime(),
+    };
+
+    tasks.push(task);
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+    e.target.reset();
+  });
+});

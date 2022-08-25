@@ -26,14 +26,26 @@ header {
   color: #ffffff;
 }
 
-input {
+input#name {
+  width: 55%;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+  appearance: none;
   border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
 }
 
 h1 {
   font-weight: 600;
 }
 
+h2 {
+  font-weight: 600;
+}
 .form-check-input:checked {
   background-color: var(--darkmain);
   border-color: var(--lightblue);
@@ -47,8 +59,8 @@ h1 {
 }
 
 h3 {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 h4 {
@@ -195,7 +207,7 @@ input:checked ~ .bubble::after {
 }
 
 .task-item .actions .edit {
-  margin-right: 1.2rem;
+  margin-right: 0.7rem;
   background-color: var(--edit);
 }
 
