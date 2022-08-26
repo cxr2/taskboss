@@ -59,8 +59,8 @@ function DisplayTasks() {
     } else {
       span.classList.add("business");
     }
-    content.classList.add("task-content");
 
+    content.classList.add("task-content");
     actions.classList.add("actions");
     edit.classList.add("edit");
     deleteBtn.classList.add("delete");
@@ -82,7 +82,8 @@ function DisplayTasks() {
     if (task.done) {
       taskItem.classList.add("done");
     }
-    input.addEventListener("change", (e) => {
+
+    input.addEventListener("click", (e) => {
       task.done = e.target.checked;
       localStorage.setItem("tasks", JSON.stringify(tasks));
 
@@ -106,8 +107,9 @@ function DisplayTasks() {
         DisplayTasks();
       });
     });
+
     deleteBtn.addEventListener("click", (e) => {
-      tasks = tasks.filter((t) => t != tasks);
+      tasks = tasks.filter((t) => t != task);
       localStorage.setItem("tasks", JSON.stringify(tasks));
       DisplayTasks();
     });
