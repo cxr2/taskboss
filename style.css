@@ -13,12 +13,6 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
-html,
-body {
-  max-width: 50% !important;
-  margin: 0 auto;
-}
-
 body {
   background-color: var(--backgroundlight) !important;
 }
@@ -227,4 +221,18 @@ input:checked ~ .bubble::after {
 .task-item.done .task-content input {
   text-decoration: line-through;
   color: var(--gray);
+}
+
+@media screen and (min-width: 1400px) {
+  html,
+  body {
+    max-width: 55% !important;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .task-item .actions button {
+    padding: 0.2rem 0.4rem;
+  }
 }
