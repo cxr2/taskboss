@@ -1,5 +1,7 @@
 :root {
   --backgroundlight: #f8f9f9;
+  --lightblue: #008fff;
+  --darkmain: #1a2744;
   --gray: rgb(122, 122, 122);
   --business-glow: 0px 0px 4px rgba(39, 132, 117, 0.75);
   --personal-glow: 0px 0px 4px rgba(176, 98, 98, 0.75);
