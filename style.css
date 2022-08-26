@@ -1,11 +1,5 @@
 :root {
-  --lightorange: #ff5436;
-  --lightgreen: #50e3c2;
-  --lightblue: #008fff;
-  --darkorange: #ff8975;
-  --darkgreen: #73ffe0;
-  --darkblue: #45adff;
-  --darkmain: #1a2744;
+  --backgroundlight: #f8f9f9;
   --gray: rgb(122, 122, 122);
   --business-glow: 0px 0px 4px rgba(39, 132, 117, 0.75);
   --personal-glow: 0px 0px 4px rgba(176, 98, 98, 0.75);
@@ -15,6 +9,10 @@
   --business: #39bda8;
   --personal: #fc8c8c;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background-color: var(--backgroundlight) !important;
 }
 
 * {
@@ -76,6 +74,7 @@ h4 {
   padding: 0.7rem 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1.5rem;
+  background-color: white;
   box-shadow: var(--shadow);
 }
 
@@ -94,6 +93,7 @@ h4 {
   padding: 1.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+  background-color: white;
   box-shadow: var(--shadow);
 }
 
@@ -173,6 +173,7 @@ input:checked ~ .bubble::after {
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
+  background-color: white;
 }
 
 .task-item label {
