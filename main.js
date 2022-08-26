@@ -51,7 +51,7 @@ function DisplayTasks() {
     const deleteBtn = document.createElement("button");
 
     input.type = "checkbox";
-    input.checked = todo.done;
+    input.checked = task.done;
     span.classList.add("bubble");
 
     if (task.category == "personal") {
@@ -82,7 +82,7 @@ function DisplayTasks() {
     if (task.done) {
       taskItem.classList.add("done");
     }
-    input.addEventListener("click", (e) => {
+    input.addEventListener("change", (e) => {
       task.done = e.target.checked;
       localStorage.setItem("tasks", JSON.stringify(tasks));
 
@@ -92,6 +92,23 @@ function DisplayTasks() {
         taskItem.classList.remove("done");
       }
 
+      DisplayTasks();
+    });
+
+    edit.addEventListener("click", (e) => {
+      const input = content.querySelector("input");
+      input.removeAttribute("readonly");
+      input.focus();
+      input.addEventListener("blur", (e) => {
+        input.setAttribute("readonly", true);
+        task.content = e.target.value;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        DisplayTasks();
+      });
+    });
+    deleteBtn.addEventListener("click", (e) => {
+      tasks = tasks.filter((t) => t != tasks);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
       DisplayTasks();
     });
   });
